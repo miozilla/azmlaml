@@ -1,0 +1,50 @@
+BasicSettings:
+  JobName: Auto-generated (prepopulated with unique name)
+  ExperimentName: mior-bike-rental
+  Description: Automated machine learning for bike rental prediction
+  Tags: none
+
+TaskTypeAndData:
+  TaskType: Regression
+  DatasetCreation:
+    Name: bike-rentals
+    Description: Historic bike rental data
+    Type: Table (mltable)
+    DataSource: From local files
+    DestinationStorageType: Azure Blob Storage
+    DatastoreName: workspaceblobstore
+    UploadFolder: "https://aka.ms/bike-rentals"  # URL to download and upload files
+  DatasetSelection: bike-rentals
+
+TaskSettings:
+  TaskType: Regression
+  Dataset: bike-rentals
+  TargetColumn: rentals
+  PrimaryMetric: NormalizedRootMeanSquaredError
+  ExplainBestModel: false
+  EnableEnsembleStacking: false
+  UseAllSupportedModels: false
+  AllowedModels:
+    - RandomForest
+    - LightGBM
+  Limits:
+    MaxTrials: 3
+    MaxConcurrentTrials: 3
+    MaxNodes: 3
+    MetricScoreThreshold: 0.085
+    ExperimentTimeout: 15
+    IterationTimeout: 15
+  EnableEarlyTermination: true
+
+ValidationAndTest:
+  ValidationType: Train-validation split
+  ValidationPercentage: 10
+  TestDataset: none
+
+Compute:
+  ComputeType: Serverless
+  VirtualMachine:
+    Type: CPU
+    Tier: Dedicated
+    Size: Standard_DS3_V2
+    NumberOfInstances: 1
