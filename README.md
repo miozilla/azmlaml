@@ -7,7 +7,7 @@ Try multiple algorithms and parameters to train multiple models, and identify th
 Train a model that predicts the number of bicycle rentals that should be expected on a given day, based on seasonal and meteorological features.
 
 ## Features
-- **Dataset** : Historical bicycle rental details.
+- **Dataset** : [Historical bicycle rental details](https://aka.ms/bike-rentals)
 - **Studio**  : [Azure ML](https://ml.azure.com)
 
 ## AutoML Workflow Progress...
