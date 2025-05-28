@@ -3,7 +3,7 @@ azmlaml : Urban Transportation #azure_ml #automated_ml
 
 ## Objective
 To streamline and simplify the process of building, training, and optimizing machine learning models.
-Try multiple algorithms and parameters to train multiple models, and identify the best one for your data. 
+Try multiple algorithms and parameters to train multiple models, and identify the best one for the data. 
 Train a model that predicts the number of bicycle rentals that should be expected on a given day, based on seasonal and meteorological features.
 
 ## Features
